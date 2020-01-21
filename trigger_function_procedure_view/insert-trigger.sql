@@ -1,0 +1,27 @@
+/* BEFORE INSERT TRIGGER */
+DELIMITER //
+CREATE TRIGGER `BeforeUserInsert`
+BEFORE INSERT ON users 
+FOR EACH ROW
+BEGIN
+    IF NEW.uuid IS NULL THEN
+       SET NEW.uuid = SUBSTR(SHA1(uuid()), 1, 15);
+    END IF;
+    
+    IF NEW.age < 10 OR NEW.age IS NULL THEN
+       SIGNAL SQLSTATE '45000' 
+       SET MESSAGE_TEXT = 'Age must be greater than or equal 10';
+    END IF;  
+END //
+DELIMITER ; 
+
+/* AFTER INSERT TRIGGER */
+DELIMITER //
+CREATE TRIGGER `AfterUserInsert`
+AFTER INSERT ON users 
+FOR EACH ROW
+BEGIN
+   INSERT INTO `logs` (`data`, `entity_id`) VALUES ('USER ACCOUNT OPENED',NEW.id);
+END //
+DELIMITER ;
+
