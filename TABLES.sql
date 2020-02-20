@@ -63,8 +63,8 @@ VALUES
 	(9,'USER ACCOUNT OPENED',9),
 	(10,'old-number: we and new-number: 01772793058,',7),
 	(11,'old-age: 10 and new-age: 30,',7),
-	(12,'old-email: we and new-email: imran@pathao.com,',7),
-	(13,'old-email: WE and new-email: omar@pathao.com,',9),
+	(12,'old-email: we and new-email: imran@gmail.com,',7),
+	(13,'old-email: WE and new-email: omar@gmail.com,',9),
 	(14,'USER ACCOUNT OPENED',10),
 	(15,'USER ACCOUNT OPENED',11),
 	(16,'old-age: 20 and new-age: 78,',11),
@@ -125,11 +125,11 @@ LOCK TABLES `users` WRITE;
 
 INSERT INTO `users` (`id`, `name`, `email`, `number`, `uuid`, `age`, `city_id`)
 VALUES
-	(7,'imran','imran@pathao.com','01772793058','e526d2f1bfe073e',30,1),
-	(9,'omar','omar@pathao.com','01772793053','e323613869f5d23',12,2),
-	(10,'nafi','nafi@pathao.com','01772793051','c4c35f433986033',23,1),
-	(11,'tanvir','tanvir@pathao.com','01772793053','a6526ec8a68e5b4',78,1),
-	(12,'mitul','mitul@pathao.com','0999333','e81f259b6114568',40,NULL);
+	(7,'imran','imran@gmail.com','01772793058','e526d2f1bfe073e',30,1),
+	(9,'omar','omar@gmail.com','01772793053','e323613869f5d23',12,2),
+	(10,'nafi','nafi@gmail.com','01772793051','c4c35f433986033',23,1),
+	(11,'tanvir','tanvir@gmail.com','01772793053','a6526ec8a68e5b4',78,1),
+	(12,'mitul','mitul@gmail.com','0999333','e81f259b6114568',40,NULL);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
